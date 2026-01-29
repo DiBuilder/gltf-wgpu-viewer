@@ -45,7 +45,7 @@ cargo install wasm-pack
 1.  将此仓库推送到 GitHub/GitLab/Bitbucket。
 2.  登录 [Netlify](https://www.netlify.com/) 并选择 "New site from Git"。
 3.  Netlify 会自动检测 `netlify.toml` 设置：
-    -   **Build command**: `curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh && wasm-pack build --target web`
+    -   **Build command**: `echo 'Using pre-built pkg directory'` (跳过构建，直接使用 `pkg/`)
     -   **Publish directory**: `.`
 
 ## 本地运行

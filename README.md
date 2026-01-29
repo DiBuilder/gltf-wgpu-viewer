@@ -45,7 +45,7 @@ This project includes a `netlify.toml` configuration for easy deployment.
 1.  Push this repository to GitHub/GitLab/Bitbucket.
 2.  Log in to [Netlify](https://www.netlify.com/) and create a "New site from Git".
 3.  Netlify will detect the `netlify.toml` settings automatically:
-    -   **Build command**: `curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh && wasm-pack build --target web`
+    -   **Build command**: `echo 'Using pre-built pkg directory'` (Skipped as `pkg/` is included)
     -   **Publish directory**: `.`
 
 ## Running Locally

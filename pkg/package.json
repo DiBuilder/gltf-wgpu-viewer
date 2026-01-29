@@ -1,0 +1,15 @@
+{
+  "name": "gltf_wasm_parser",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "gltf_wasm_parser_bg.wasm",
+    "gltf_wasm_parser.js",
+    "gltf_wasm_parser.d.ts"
+  ],
+  "main": "gltf_wasm_parser.js",
+  "types": "gltf_wasm_parser.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

@@ -1,7 +1,6 @@
 [build]
-  # 安装 wasm-pack 并构建项目
-  # Netlify 的构建环境默认包含 Rust，但没有 wasm-pack，所以需要先安装
-  command = "curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh && wasm-pack build --target web"
+  # 使用预构建的 pkg 目录，跳过构建步骤
+  command = "echo 'Using pre-built pkg directory'"
   # 发布目录为根目录（包含 index.html）
   publish = "."
 
