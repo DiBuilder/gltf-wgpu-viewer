@@ -1,0 +1,18 @@
+[build]
+  # 安装 wasm-pack 并构建项目
+  # Netlify 的构建环境默认包含 Rust，但没有 wasm-pack，所以需要先安装
+  command = "curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh && wasm-pack build --target web"
+  # 发布目录为根目录（包含 index.html）
+  publish = "."
+
+# 确保 WASM 文件使用正确的 MIME 类型（通常 Netlify 默认支持，这里显式声明更安全）
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
+
+# 为所有文件添加缓存控制（可选，开发阶段禁用缓存可能更好，这里设为协商缓存）
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-cache"

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rust + WebGPU glTF Viewer</title>
+    <style>
+        body { margin: 0; background: #1a1a1a; color: white; font-family: sans-serif; overflow: hidden; }
+        #ui { position: absolute; top: 20px; left: 20px; z-index: 10; background: rgba(0,0,0,0.8); padding: 15px; border-radius: 8px; border: 1px solid #444; }
+        canvas { width: 100vw; height: 100vh; display: block; }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <h3>WebGPU + Rust Parser</h3>
+        <p>选中 <b>.gltf</b> 和 <b>.bin</b> 上传，或选择文件夹：</p>
+        <div style="display: flex; gap: 10px;">
+            <input type="file" id="fileInput" multiple accept=".glb,.gltf,.bin,.png,.jpg,.jpeg">
+            <input type="file" id="folderInput" multiple webkitdirectory style="display: none;">
+            <button onclick="document.getElementById('folderInput').click()">选择文件夹</button>
+        </div>
+        <p style="font-size: 12px; color: #aaa; margin-top: 5px;">
+            操作说明：左键旋转 | Shift+左键 或 右键平移 | 滚轮缩放
+        </p>
+        <p id="status">等待上传...</p>
+        <div id="perfStats" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #555; font-size: 12px; line-height: 1.6;">
+            <div>FPS: <span id="stat-fps" style="color: #4f4">0</span></div>
+            <div>Triangles: <span id="stat-tris" style="color: #fc0">0</span></div>
+            <div>Draw Calls: <span id="stat-draws" style="color: #fc0">0</span></div>
+            <div>Load Time: <span id="stat-load" style="color: #0cf">0</span> ms</div>
+        </div>
+    </div>
+    <canvas id="gpuCanvas"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

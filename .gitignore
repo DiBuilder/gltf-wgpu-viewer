@@ -1,0 +1,22 @@
+# Rust build artifacts
+/target
+
+# WASM build artifacts
+/pkg
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Local history/logs
+.history
+nohup.out
+
+# Node modules (if any)
+node_modules
